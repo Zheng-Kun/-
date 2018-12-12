@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .parent{
+      width: 200px;
+      height: 200px;
+      transform: rotate(45deg);
+      margin: 50px;
+      overflow: hidden;
+    }
+    .child{
+      width: 100%;
+      height: 100%;
+      background: url("../../image/image-border.jpg") top / cover;
+      transform: rotate(-45deg) scale(1.42);
+    }
+    .good{
+      width: 200px;
+      height: 200px;
+      background: url("../../image/image-border.jpg") top / cover;
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
+    }
+    .animation:hover{
+      clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
+      transition: 1s clip-path;
+    }
+
+    .clip-triangle{
+      box-sizing: border-box;
+      width: 200px;
+      height: 100px;
+      padding: 50px;
+      line-height: 2;
+      background-color: dodgerblue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+  <div class="good"></div>
+  <div class="clip-triangle">
+    多了解一些属性，开动大脑，做一些奇妙的事
+  </div>
+</body>
+</html>

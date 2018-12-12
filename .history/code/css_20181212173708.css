@@ -1,10 +1,8 @@
 .selector{
 	/*使用相对大小*/
-
 	/*good:*/
 	font-size: 20px;
 	line-height: 30px;
-
 	/*bad*/
 	font-size: 20px;
 	line-height: 1.5;
@@ -13,25 +11,15 @@
 
 
 	/*适当的简写*/
-
 	/*bad*/
 	margin: 10px 10px 10px 0;
-
 	/*good*/
 	margin: 10px;
 	margin-left: 0px;
-
-	/* bad */
-	margin: 10px 20px 0 20px;
-	/* or */
-	margin: 10px 20px;
-	margin-bottom: 0px;
-
-	/* good */
-	margin: 10px 20px 0;
 	/*bad 设置背景颜色 假如需求改变，这里的背景色要换为背景图片时，如果不注意忘记删除原来背景色的代码，
 	background-color与background-image会同时生效，这并不是我们所期望的（背景透明的图片会有底色），
 	同样如果要将原来设置的背景图片改为纯色，background-color并不会覆盖background-image*/
+	background-image: 
 	background-color: red;
 	/*good 不论是图片背景还是纯色背景都使用background简写就可以避免以上问题*/
 	background: red;
