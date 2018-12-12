@@ -65,11 +65,11 @@ a{
 }
 ```
 ### 4.利用一些新的CSS属性实现一些样式，而不是添加大量的伪元素
-  - [图片边框](./code/image-border/image-border.html)
-  - [短线效果](./code/title-style/title-style.html)
-  - [菱形边框](./code/picture/picture.html)
-  - [切角效果](./code/picture/picture.html)
-  - [梯形标签](./code/picture/picture.html)
+  - [图片边框](http://htmlpreview.github.io/?https://github.com/Zheng-Kun/cssTip/blob/master/code/image-border/image-border.html)
+  - [短线效果](http://htmlpreview.github.io/?https://github.com/Zheng-Kun/cssTip/blob/master/code/title-style/title-style.html)
+  - [菱形边框](http://htmlpreview.github.io/?https://github.com/Zheng-Kun/cssTip/blob/master/code/picture/picture.html)
+  - [切角效果](http://htmlpreview.github.io/?https://github.com/Zheng-Kun/cssTip/blob/master/code/picture/picture.html)
+  - [梯形标签](http://htmlpreview.github.io/?https://github.com/Zheng-Kun/cssTip/blob/master/code/picture/picture.html)
 
 ### 5.使用预处理器(Less)提供的函数减少代码重复（DRY）
 ```
@@ -87,9 +87,9 @@ a{
 }
 ```
 ### 6.居中的小技巧
- - [垂直居中](./code/center/view-center.html)
- - [基于视口的居中](./code/center/view-center.html)
- - [100%宽度背景，固定宽度内容居中](./code/center/view-center.html)
+ - [垂直居中](http://htmlpreview.github.io/?https://github.com/Zheng-Kun/cssTip/blob/master/code/center/view-center.html)
+ - [基于视口的居中](http://htmlpreview.github.io/?https://github.com/Zheng-Kun/cssTip/blob/master/code/center/view-center.html)
+ - [100%宽度背景，固定宽度内容居中](http://htmlpreview.github.io/?https://github.com/Zheng-Kun/cssTip/blob/master/code/center/view-center.html)
 
 ### 7.将css属性按一定的规律顺序排列（提高代码可维护性）
 参考：
