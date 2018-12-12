@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+     .box{
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 0 10px;
+      vertical-align: top;
+
+      width: 200px;
+      height: 100px;
+    }
+    img{
+      width: 100px;
+    }
+    .inner-box{
+      height: 100%;
+    }
+
+
+    .class1{
+      background: url('../../image/image-border.jpg');
+      background-size: cover; 
+      padding: 20px;
+    }
+    .class1 > div {
+      background: white;
+    }
+    .class2{
+      border: 20px solid transparent;
+      border-image: url('../../image/image-border.jpg') 20% round;
+      /* border-image: url('../../image/image-border.jpg') 20% stretch;
+      border-image: url('../../image/image-border.jpg') 20% repeat; */
+    }
+    .class3{
+      background: url('../../image/image-border.jpg');
+      background-clip: padding-box, border-box;
+      border: 20px solid transparent; 
+    }
+  </style>
+</head>
+<body>
+  <img src="../../image/image-border.jpg" alt="">
+  <div class="class1 box">
+    <div class="inner-box">balbala</div>
+  </div>
+  <div class="class2 box">balbala</div>
+  <div class="class3 box">balbala</div>
+</body>
+</html>

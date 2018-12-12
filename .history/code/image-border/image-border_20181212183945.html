@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      box-sizing: border-box;
+    }
+    .class1{
+      padding: 20px;
+      width: 200px;
+
+      background: url('../../image/image-border.jpg');
+      background-size: cover; 
+      box-sizing: border-box;
+    }
+    .class1 > div {
+      background: white;
+    }
+
+    .class2{
+      width: 200px;
+      height: 100px;
+      border: 20px solid white;
+      border-image: url('../../image/image-border.jpg') 20 round;
+    }
+  </style>
+</head>
+<body>
+  <div class="class1">
+    <div>balbala</div>
+  </div>
+  <div class="class2">balbala</div>
+  <div class="class3">balbala</div>
+</body>
+</html>

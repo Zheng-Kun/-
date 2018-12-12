@@ -1,0 +1,47 @@
+.selector{
+	/*使用相对大小*/
+	/*good:*/
+	font-size: 20px;
+	line-height: 30px;
+	/*bad*/
+	font-size: 20px;
+	line-height: 1.5;
+
+	/*在适当的位置使用相对单位em，rem，vw，vh，vmin，vmax，（相对视口宽高的百分比）%*/
+
+
+	/*适当的简写*/
+	/*bad*/
+	margin: 10px 10px 10px 0;
+	/*good*/
+	margin: 10px;
+	margin-left: 0px;
+	/*bad 设置背景颜色 假如需求改变，这里的背景色要换为背景图片时，如果不注意忘记删除原来背景色的代码，
+	background-color与background-image会同时生效，这并不是我们所期望的（背景透明的图片会有底色），
+	同样如果要将原来设置的背景图片改为纯色，background-color并不会覆盖background-image*/
+	background-image: 
+	background-color: red;
+	/*good 不论是图片背景还是纯色背景都使用background简写就可以避免以上问题*/
+	background: red;
+
+	/*使用inherit使代码可维护 我们都知道inherit会继承父元素的属性值，但是实际中我们在写代码是很少使用它*/
+	/*让链接的颜色与父元素一致*/
+	/*good*/
+	a{
+		color: inherit;
+	}
+	/*bad*/
+	a{
+		color: #000;
+	}
+	/*伪元素与父元素的颜色保持一致*/
+	.select{
+		background-color: gray;
+	}
+	.select::after{
+		/*bad*/
+		background-color: gray;
+		/*good*/
+		background-color: indert;
+	}
+}
