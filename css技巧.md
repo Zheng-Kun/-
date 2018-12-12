@@ -1,25 +1,24 @@
-# CSS Tips
+# CSS 的一些技巧
 @(FontEnd)[CSS]
 ***
 ## 好的CSS代码应该是怎样的？
-- DRY：避免不必要的重复
-- 可维护
-- 灵活
-- 兼容：不使用未标准化的属性
+- DRY (Don't Repeat Yourself)
+- 灵活,可维护
+- 兼容,最好不要使用未标准化的属性
 - 不依赖冗余的dom节点
 
-## 怎样写出更好的CSS代码呢？
-### 在适当的位置使用相对单位em，rem，vw，vh，vmin，vmax，（相对视口宽高的百分比）%
+## 一些小技巧
+### 1.在适当的位置使用相对单位em，rem，vw，vh，vmin，vmax，（相对视口宽高的百分比）%
 ```
-/*good:*/
+/*bad(复制蓝湖就会出现这样的代码)*/
 font-size: 20px;
 line-height: 30px;
 
-/*bad*/
+/*good*/
 font-size: 20px;
 line-height: 1.5;
 ```
-### 适当的简写
+### 2.适当的简写
 ```
 /*bad*/
 margin: 10px 10px 10px 0;
@@ -36,13 +35,14 @@ margin-bottom: 0px;
 
 /* good */
 margin: 10px 20px 0;
+
 /*bad 设置背景颜色 假如需求改变，这里的背景色要换为背景图片时，如果不注意忘记删除原来背景色的代码，background-color与background-image会同时生效，这并不是我们所期望的（背景透明的图片会有底色），
 同样如果要将原来设置的背景图片改为纯色，background-color并不会覆盖background-image*/
 background-color: red;
 /*good 不论是图片背景还是纯色背景都使用background简写就可以避免以上问题*/
 background: red;
 ```
-### 使用inherit提高代码可维护性
+### 3.使用inherit
 ```
 /*让链接的颜色与父元素一致*/
 /*good*/
@@ -64,11 +64,75 @@ a{
   background-color: indert;
 }
 ```
-### 使用尽量少的Dom实现某些样式。
-   - 图片边框
-   - 短线
-   - 菱形
-   - 切角
+### 4.利用一些新的CSS属性实现一些样式，而不是添加大量的伪元素
+  - [图片边框](./code/image-border/image-border.html)
+  - [短线效果](./code/title-style/title-style.html)
+  - [菱形边框](./code/picture/picture.html)
+  - [切角效果](./code/picture/picture.html)
+  - [梯形标签](./code/picture/picture.html)
+
+### 5.使用预处理器(Less)提供的函数减少代码重复（DRY）
+```
+.clipcircle(@radius:15px,@bgcolor:red){
+  background: radial-gradient(circle at top left,transparent @radius, @bgcolor 0) top left,
+  radial-gradient(circle at top right,transparent @radius, @bgcolor 0) top right,
+  radial-gradient(circle at bottom right, transparent @radius, @bgcolor 0) bottom right,
+  radial-gradient(circle at bottom left, transparent @radius, @bgcolor 0) bottom left;
+  background-size: 51% 51%;
+  background-repeat: no-repeat;
+}
+.clip-circle{
+  .clipcircle
+  /* .clipcircle(20px,gray) */
+}
+```
+### 6.居中的小技巧
+ - [垂直居中](./code/center/view-center.html)
+ - [基于视口的居中](./code/center/view-center.html)
+ - [100%宽度背景，固定宽度内容居中](./code/center/view-center.html)
+
+### 7.将css属性按一定的规律顺序排列（提高代码可维护性）
+参考：
+1. 影响文档流的属性（比如：display, position, float, clear, visibility, table-layout等） 
+2. 自身盒模型的属性（比如：width, height, margin, padding, border等） 
+3. 排版相关属性（比如：font, line-height, text-align, text-indent, vertical-align等等） 
+4. 装饰性属性（比如：color, background, opacity, cursor等） 
+5. 生成内容的属性（比如：content, list-style等）
+ - 在使用中需要灵活使用，例如在不能将border属性简写的情况下，width与color，前者属于盒模型，后者属于装饰性的属性，我们最好还是将他们写在一起
+```
+/* good * /
+.selector{
+    display: inline-block;
+    position: absolute;
+    top:-20px;
+    right: 0;
+    width: 100px;
+    height: 20px;
+    padding: 5px 10px;
+
+    font-size: 12px;
+    line-height: 1.5;
+    background-color: aquamarine;
+    color: white;
+    font-size: 0;
+    font-weight: bold;
+}
+/* bad */
+.selector{
+    display: inline-block;
+    top:-20px;
+    right: 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    width: 100px;
+    height: 20px;
+    background-color: aquamarine;
+    line-height: 1.5;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+}
+```
 
 ## 一些属性的用法
 1. clip-path

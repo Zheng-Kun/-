@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      box-sizing: border-box;
+    }
+    .child{
+      position: absolute;
+      top: 50%; left: 50%;
+      /* !!! transform 的 translate() 函数中 % 单位是以元素自身宽高作为基准移动的 */
+      transform: translate(-50%, -50%);
+      width: 200px;
+      padding: 20px;
+      background: hotpink;
+    }
+
+    .parent{
+      position: relative;
+      margin: 50vh auto 0;
+      transform: translateY(-50%);
+      width: 800px;
+      height: 800px;
+      background: pink;
+    }
+
+    .parent2{
+      margin: auto;
+      width: 800px;
+      height: 800px;
+      /* --- */
+      display: flex;
+      /* 交叉轴居中 */
+      align-items: center;
+      /* 主轴居中 */
+      justify-content: center;
+
+
+      background: pink;
+    }
+    .child2{
+      /* --- */
+      /* margin: auto; */
+      width: 200px;
+      background: hotpink;
+    }
+
+    .bg-center{
+      margin-top: 100px;
+      padding: 2em calc(50% - 450px);
+
+      background: url('../../image/image-border.jpg') no-repeat top / cover;
+      color: white;
+      font-size: 24px;
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+  <!-- 垂直居中的传统方法：
+  表格布局
+  行内块
+  绝对定位
+  传统方法：（使用绝对定位相对父元素便宜50%，再设置负的外边距为元素高的一半） 只适用于被居中的元素具固定的高度的情况 -->
+  <div class="parent">
+    <div class="child">
+      我不知道风
+      是在哪一个方向吹——
+      我是在梦中，
+      在梦的轻波里依洄
+      我不知道风
+      是在哪一个方向吹——
+      我是在梦中，
+      在梦的轻波里依洄
+      我不知道风
+      是在哪一个方向吹——
+      我是在梦中，
+      在梦的轻波里依洄
+      我不知道风
+      是在哪一个方向吹——
+      我是在梦中，
+      在梦的轻波里依洄
+    </div>
+  </div>
+
+  <!-- 基于flexbox的实现 -->
+  <div class="parent2">
+    <div class="child2">
+      我不知道风
+      是在哪一个方向吹——
+      我是在梦中，
+      在梦的轻波里依洄
+      我不知道风
+      是在哪一个方向吹——
+      我是在梦中，
+      在梦的轻波里依洄
+    </div>
+  </div>
+
+  <!-- 100%宽的背景 定宽的内容
+  传统方法，两个容器，父容器负责容纳背景，子元素负责容纳内容与居中
+  -->
+  <div class="bg-center">
+    主题文章是全历史的特色类型文章，旨在用一条明确的线索，如时间、共有属性、共同主题进行编辑。这种类型对于浏览线索性很强的文章非常方便，除了可以像普通文章那样进行文字编辑和排版，还可以为每一段添加时间信息和地点信息，方便读者的阅读。
+  </div>
+</body>
+</html>

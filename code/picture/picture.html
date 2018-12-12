@@ -9,11 +9,12 @@
     div{
       margin: 100px;
     }
+    /* 菱形边框，旋转方案 */
     .parent{
+      overflow: hidden;
       width: 200px;
       height: 200px;
       transform: rotate(45deg);
-      overflow: hidden;
     }
     .child{
       margin: 0;
@@ -22,6 +23,7 @@
       background: url("../../image/image-border.jpg") top / cover;
       transform: rotate(-45deg) scale(1.42);
     }
+    /* 菱形边框，clip-path方案 */
     .good{
       width: 200px;
       height: 200px;
@@ -33,6 +35,7 @@
       transition: 1s clip-path;
     }
 
+    /* 切角 */
     .clip-triangle{
       box-sizing: border-box;
       width: 200px;
@@ -41,9 +44,71 @@
       color: white;
       border-radius: 2px;
     }
+    /* 复杂的切角 */
     .clip-circle{
-      
+      box-sizing: border-box;
+      width: 200px;
+      padding: 20px;
+      background: radial-gradient(circle at top left,transparent 15px, red 0) top left,
+      radial-gradient(circle at top right,transparent 15px, red 0) top right,
+      radial-gradient(circle at bottom right, transparent 15px, red 0) bottom right,
+      radial-gradient(circle at bottom left, transparent 15px, red 0) bottom left;
+      background-size: 51% 51%;
+      background-repeat: no-repeat;
+      color: white;
     }
+
+    /* 传统的梯形标签 */
+    .trapezoid-tab1{
+      position: relative;
+      height: 50px;
+      width: 100px;
+      background: #4D7485;
+    }
+    .trapezoid-tab1::before,
+    .trapezoid-tab1::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      display: block;
+      border-style: solid
+    }
+    .trapezoid-tab1::before{
+      left: -25px;
+      border-width: 0 0 50px 25px;
+      border-color:transparent transparent #4D7485;
+    }
+    .trapezoid-tab1::after{
+      right: -25px;
+      border-width: 0 25px 50px 0;
+      border-color:transparent transparent #4D7485;
+    }
+
+    /* 使用transform实现矩形标签 */
+    .trapezoid-tab2{
+      margin-top: 0;
+      position: relative;
+      display: inline-block;
+      font-size: 24px;
+      /* 让宽高根矩文本内容调节,提高灵活性和可维护性 */
+      padding: 1em 2em 0;
+      color: white;
+    }
+    .trapezoid-tab2::after{
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: #4D7485;
+      border: 2px solid rgb(12, 55, 70);
+      border-bottom: none;
+      border-radius: 0.5em 0.5em 0 0;
+      /* perspective 属性指定了观察者与z=0平面的距离，使具有三维位置变换的元素产生透视效果。z>0的三维元素比正常大，而z<0时则比正常小，大小程度由该属性的值决定 */
+      transform: perspective(0.5em) rotateX(5deg);
+      transform-origin: bottom;
+      /* transform-origin: bottom left; */
+    }
+
   </style>
 </head>
 <body>
@@ -51,11 +116,16 @@
     <div class="child"></div>
   </div>
   <div class="good"></div>
-  <div class="clip-triangle">#4D7485
+  <div class="clip-triangle">
     多了解一些属性，开动大脑，做一些奇妙的事儿
   </div>
-  <div class="clip-circle">#4D7485
+  <div class="clip-circle">
     多了解一些属性，开动大脑，做一些奇妙的事儿
+  </div>
+
+  <div class="trapezoid-tab1"></div>
+
+  <div class="trapezoid-tab2">TEXT</div>
   </div>
 </body>
 </html>

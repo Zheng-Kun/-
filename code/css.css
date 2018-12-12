@@ -56,4 +56,20 @@
 		/*good*/
 		background-color: indert;
 	}
+
+	.selector{
+		display: inline-block;
+		position: absolute;
+		top:-20px;
+		right: 0;
+		width: 100px;
+		height: 20px;
+		padding: 5px 10px;
+		
+		font-size: 12px;
+		line-height: 1.5;
+		background-color: aquamarine;
+		color: white;
+		font-weight: bold;
+	}
 }
