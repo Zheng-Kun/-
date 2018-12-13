@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box1{
+      height: 200px;
+      width: 300px;
+      background: #fe9;
+    }
+    .box2{
+      height: 100%;
+      width: 100%;
+      clip-path: inset(22% 12% 10px 20px round 10px);
+      clip-path:circle(30%);
+      clip-path:circle(50px at 30% 30%);
+      clip-path: polygon(evenodd, 50% 0, 100% 50%, 50% 100%, 0 50% );
+      clip-path: polygon(nonzero, 50% 0, 100% 50%, 50% 100%, 0 50% );
+      clip-path: polygon(evenodd, 50,0 21,90 98,35 2,35 79,90);
+      clip-path: polygon(nonzero, 50,0 21,90 98,35 2,35 79,90);
+      background: linear-gradient(to bottom right,#f52,#05f);
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">
+    <div class="box2"></div>
+  </div>
+</body>
+</html>
