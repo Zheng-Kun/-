@@ -12,11 +12,8 @@
   <script>
     var versionTest = document.getElementById("version-test");
     var userAgentTest = document.getElementById("useragent-test");
-    versionTest.addEventListener("click",function(e){
-      alert(`${navigator.appVersion}`);
-    })
-    userAgentTest.addEventListener("click",function(e){
-      alert(`${navigator.userAgent}`);
+    button.addEventListener("click",function(e){
+      alert(`appVersion:${navigator.appVersion}\nuserAgent:${navigator.userAgent}`);
     })
   </script>
 </body>
