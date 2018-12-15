@@ -24,14 +24,14 @@
   <script>
     var versionTest = document.getElementById("version-test");
     var userAgentTest = document.getElementById("useragent-test");
-    versionTest.innerText = `appVersion:${navigator.appVersion}`;
-    userAgentTest.innerText = `userAgent:${navigator.userAgent}`;
-    /* versionTest.addEventListener("click",function(e){
+    versionTest.innerText = `${navigator.appVersion}`;
+    userAgentTest.innerText = `${navigator.userAgent}`;
+    versionTest.addEventListener("click",function(e){
       alert(`${navigator.appVersion}`);
     })
     userAgentTest.addEventListener("click",function(e){
       alert(`${navigator.userAgent}`);
-    }) */
+    })
   </script>
 </body>
 </html>
